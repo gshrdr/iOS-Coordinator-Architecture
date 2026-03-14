@@ -4,6 +4,10 @@ Companion repo for a blog post showcasing the Coordinator architecture implement
 Full tutorial walking you through how this architecture works:
 https://gavinshrader.com/blog/ios-coordinator-architecture/
 
+### Setup Guide
+
+Download/clone the repo, add your development team, and replace the bundle ID with your team name ("com.YourNameHere.coordinator-demo"), then compile the app and you're all set!
+
 ### App Screenshots
 
 Some quick screenshots of what this app looks like compiled on a device.
