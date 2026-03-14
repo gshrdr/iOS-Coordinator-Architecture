@@ -29,6 +29,7 @@ struct HomeScreen: View {
                 .tint(.primary)
             }
         }
+        .contentMargins(.bottom, 20, for: .scrollContent)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {

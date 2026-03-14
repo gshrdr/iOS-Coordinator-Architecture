@@ -60,6 +60,7 @@ struct ExploreScreen: View {
                 }
             }
         }
+        .contentMargins(.bottom, 20, for: .scrollContent)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {

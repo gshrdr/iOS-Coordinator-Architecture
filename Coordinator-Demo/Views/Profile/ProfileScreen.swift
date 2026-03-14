@@ -13,12 +13,15 @@ struct ProfileScreen: View {
     var onSaveProfile: ((String) -> Void)?
 
     @State private var editedUsername: String = ""
+    @FocusState private var isTextFieldFocused: Bool
 
     var body: some View {
         Form {
             Section {
                 TextField("Username", text: $editedUsername)
+                    .focused($isTextFieldFocused)
                 Button("Save") {
+                    isTextFieldFocused = false
                     onSaveProfile?(editedUsername)
                 }
             } header: {
@@ -32,6 +35,7 @@ struct ProfileScreen: View {
                 LabeledContent("Favorites", value: "\(appState.favoriteCount)")
             }
         }
+        .contentMargins(.bottom, 20, for: .scrollContent)
         .onAppear {
             editedUsername = appState.username
         }
