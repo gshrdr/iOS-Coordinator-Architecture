@@ -79,7 +79,10 @@ final class AppCoordinator: Coordinator {
 
     // MARK: - Deep Linking
     func handleDeepLink(_ deepLink: DeepLink) {
-        showMainApp()
+        // Only create a new tab coordinator if one doesn't already exist
+        if childCoordinators.compactMap({ $0 as? MainTabCoordinator }).first == nil {
+            showMainApp()
+        }
 
         guard let tabCoordinator = childCoordinators
             .compactMap({ $0 as? MainTabCoordinator }).first else { return }
